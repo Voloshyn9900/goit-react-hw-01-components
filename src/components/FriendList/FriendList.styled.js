@@ -27,12 +27,10 @@ export const List = styled.ul`
   
   `;
 
-export const FriendItem = styled.li`
-  display:flex; 
+export const Li = styled.li`
+  display: flex;
   background-color: ${props => props.theme.colors.lightGray};
-    align-items: center;
-
-
+  align-items: center;
 
   &:not(:last-child) {
     margin-bottom: 3px;

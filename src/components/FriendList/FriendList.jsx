@@ -3,10 +3,9 @@ import {
   Container,
   WrapCard,
   List,
-  FriendItem,
-  Name,
-  StatusOnline,
 } from './FriendList.styled';
+
+import { FriendListItem } from './FriendListItem';
 
 export function FriendList({ item }) {
   return (
@@ -15,15 +14,14 @@ export function FriendList({ item }) {
         <Container>
           <WrapCard>
             <List>
-              {item.map(({ avatar, name, isOnline,id }) => {
+              {item.map(({ avatar, name, isOnline, id }) => {
                 return (
-                  <FriendItem key={id}>
-                    <StatusOnline $isOnline={isOnline}>
-                      {/* {isOnline ? 'Online' : 'Offline'} */}
-                    </StatusOnline>
-                    <img src={avatar} alt={`avatar of ${name}`} width="40px" />
-                    <Name>{name}</Name>
-                  </FriendItem>
+                  <FriendListItem
+                    key={id}
+                    avatar={avatar}
+                    name={name}
+                    isOnline={isOnline}
+                  />
                 );
               })}
             </List>

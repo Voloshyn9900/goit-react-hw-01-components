@@ -10,28 +10,32 @@ import {
   StatisticalItem,
 } from './Profile.styled';
 
-export function Profile(props) {
+export function Profile({username,
+  tag,
+  location,
+  avatar,
+  stats}) {
   return (
     <>
       <Section>
         <Container>
           <Card>
-            <PersonImg src={props.item.avatar} alt="User avatar"></PersonImg>
-            <Username>{props.item.username}</Username>
-            <Tag>@{props.item.tag}</Tag>
-            <Location>{props.item.location}</Location>
+            <PersonImg src={avatar} alt="User avatar"></PersonImg>
+            <Username>{username}</Username>
+            <Tag>@{tag}</Tag>
+            <Location>{location}</Location>
             <StatisticalList>
               <StatisticalItem>
                 <span>Followers</span>
-                <span>{props.item.stats.followers}</span>
+                <span>{stats.followers}</span>
               </StatisticalItem>
               <StatisticalItem>
                 <span>Views</span>
-                <span>{props.item.stats.views}</span>
+                <span>{stats.views}</span>
               </StatisticalItem>
               <StatisticalItem>
                 <span>Likes</span>
-                <span>{props.item.stats.likes}</span>
+                <span>{stats.likes}</span>
               </StatisticalItem>
             </StatisticalList>
           </Card>

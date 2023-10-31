@@ -13,7 +13,7 @@ export function Statistics(props) {
       <Section>
         <Container>
           <Card>
-            <h2>{props.title}</h2>
+            {props.title && <h2>{props.title}</h2>}
             <StatisticsList>
               {props.item.map(item => {
                 return (
